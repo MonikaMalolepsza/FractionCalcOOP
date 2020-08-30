@@ -8,91 +8,121 @@ namespace FractionCalcOOP
             Splashinfo();
 
 
-            //TODO: menu anpassen!
+            // objects initialized and nullified
+            
 
-            //Fraction fraction = new Fraction();
+            Fraction result = null;
+            Fraction fraction1 = null;
+            Fraction fraction2 = null;
 
-            //bool isActive = true;
-            //char operation;
-            //do
-            //{
-            //    Console.Clear();
-            //    Console.WriteLine("Please provide values for for:");
-            //    Console.WriteLine();
-            //    Console.WriteLine("the numerator 1:");
-            //    fraction1.numerator = Convert.ToInt32(Console.ReadLine());
-            //    Console.WriteLine("the denominator 1:");
-            //    fraction1.denominator = Convert.ToInt32(Console.ReadLine());
-            //    Console.WriteLine("the numerator 2:");
-            //    fraction2.numerator = Convert.ToInt32(Console.ReadLine());
-            //    Console.WriteLine("the denominator 2:");
-            //    fraction2.denominator = Convert.ToInt32(Console.ReadLine());
-            //    Console.WriteLine("Enter Operation");
-            //    Console.WriteLine();
-            //    Console.WriteLine("Possible operations:");
-            //    Console.WriteLine("Addition '+' ");
-            //    Console.WriteLine("Subtraction '-' ");
-            //    Console.WriteLine("Multiplication '*' ");
-            //    Console.WriteLine("Division '/' ");
-            //    Console.WriteLine();
-            //    Console.WriteLine();
-            //    operation = Convert.ToChar(Console.ReadLine());
+            bool isActive = true;
+            char operation;
+            do
+            {
 
-            //    switch (operation)
-            //    {
-            //        case '+':
-            //            Addition(ref fraction1, ref fraction2, ref result);
-            //            break;
-            //        case '-':
-            //            Subtraction(ref fraction1, ref fraction2, ref result);
-            //            break;
-            //        case '*':
-            //            Multiplication(ref fraction1, ref fraction2, ref result);
-            //            break;
-            //        case '/':
-            //            Division(ref fraction1, ref fraction2, ref result);
-            //            break;
-            //        default:
+                // objects instantated
+                
+                result = new Fraction();
+                fraction1 = new Fraction();
+                fraction2 = new Fraction();
 
-            //            break;
-            //    }
+                Console.Clear();
+                Console.WriteLine("Please provide values for for:");
+                Console.WriteLine();
+                Console.WriteLine("the numerator 1:");
 
+                try
+                {
+                    fraction1.Numerator = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("the denominator 1:");
+                    fraction1.Denominator = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("the numerator 2:");
+                    fraction2.Numerator = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("the denominator 2:");
+                    fraction2.Denominator = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Enter Operation");
+                    Console.WriteLine();
+                    Console.WriteLine("Possible operations:");
+                    Console.WriteLine("Addition '+' ");
+                    Console.WriteLine("Subtraction '-' ");
+                    Console.WriteLine("Multiplication '*' ");
+                    Console.WriteLine("Division '/' ");
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    operation = Convert.ToChar(Console.ReadLine());
 
-            //    Reduce(ref result);
-
-            //    Console.WriteLine($@"Result: {result.numerator} / {result.denominator}");
-
-            //    Console.ReadKey(true);
-
-            //    bool exitMenu = true;
-            //    do
-            //    {
-            //        Console.WriteLine("Would you like to perform another operation? (y/n)");
-            //        Console.WriteLine();
-            //        ConsoleKeyInfo exit = Console.ReadKey();
-
-            //        if (exit.KeyChar == 'n')
-            //        {
-            //            isActive = false;
-            //            exitMenu = false;
-            //        }
-            //        else if (exit.KeyChar == 'y')
-            //        {
-            //            isActive = true;
-            //            exitMenu = false;
-
-            //        }
-            //        else
-            //        {
-            //            Console.Clear();
-            //            Console.WriteLine("Write 'y' to continue, 'n' to close exit");
-            //            exitMenu = true;
-
-            //        }
-            //    } while (exitMenu);
+                    switch (operation)
+                    {
+                        case '+':
+                            result.Assign(fraction1.Addition(fraction2));
+                            break;
+                        case '-':
+                            result.Assign(fraction1.Substraction(fraction2));
+                            break;
+                        case '*':
+                            result.Assign(fraction1.Multiplication(fraction2));
+                            break;
+                        case '/':
+                            result.Assign(fraction1.Division(fraction2));
+                            break;
+                        default:
+                            throw new ArgumentException("Invalid operator!");
+                    }
 
 
-            //} while (isActive);
+                    result.Reduce();
+
+                    Console.WriteLine($@"Result: {result.Numerator} / {result.Denominator}");
+
+                }
+
+                // basic exception handling
+
+                catch (Exception e)
+                {
+                    if (e is ArgumentException || e is DivideByZeroException || e is FormatException)
+                    {
+                        Console.Clear();
+                        Console.WriteLine(e.Message);
+
+                    }
+                    else
+                    {
+                        throw e;
+                    }
+                }
+ 
+                Console.ReadKey(true);
+
+                bool exitMenu = true;
+                do
+                {
+                    Console.WriteLine("Would you like to perform another operation? (y/n)");
+                    Console.WriteLine();
+                    ConsoleKeyInfo exit = Console.ReadKey();
+
+                    if (exit.KeyChar == 'n')
+                    {
+                        isActive = false;
+                        exitMenu = false;
+                    }
+                    else if (exit.KeyChar == 'y')
+                    {
+                        isActive = true;
+                        exitMenu = false;
+
+                    }
+                    else
+                    {
+                        Console.Clear();
+                        Console.WriteLine("Write 'y' to continue, 'n' to close exit");
+                        exitMenu = true;
+
+                    }
+                } while (exitMenu);
+
+
+            } while (isActive);
 
 
         }

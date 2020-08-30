@@ -113,13 +113,27 @@ namespace FractionCalcOOP
 
         // Reduce
 
-        private void Reduce()
+        public void Reduce()
         {
-            int GCD = FindGreatestCommonDivisor(this.Numerator, this.Denominator);
 
-            this.Numerator /= GCD;
-            this.Denominator /= GCD;
+            if (this.Numerator != 0)
+            {
 
+                int GCD = FindGreatestCommonDivisor(this.Numerator, this.Denominator);
+
+                this.Numerator /= GCD;
+                this.Denominator /= GCD;
+
+            }
+            
+        }
+
+        // Assign
+
+        public void Assign(Fraction fraction)
+        {
+            this.Numerator = fraction.Numerator;
+            this.Denominator = fraction.Denominator;
         }
 
         #endregion

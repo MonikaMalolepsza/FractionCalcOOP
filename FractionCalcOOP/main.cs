@@ -2,11 +2,11 @@
 
 namespace FractionCalcOOP
 {
-    class main
+    partial class main
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+             Run();
         }
     }
 }
