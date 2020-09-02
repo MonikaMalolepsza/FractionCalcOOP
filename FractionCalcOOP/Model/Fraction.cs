@@ -72,6 +72,7 @@ namespace FractionCalcOOP
 
             result.Numerator = this.Numerator * LCM / this.Denominator + fraction2.Numerator * LCM / fraction2.Denominator;
             result.Denominator = LCM;
+            result.Reduce();
 
             return result;
         }
@@ -87,7 +88,7 @@ namespace FractionCalcOOP
 
             result.Numerator = this.Numerator * LCM / this.Denominator - fraction2.Numerator * LCM / fraction2.Denominator;
             result.Denominator = LCM;
-
+            result.Reduce();
 
             return result;
         }
@@ -101,7 +102,7 @@ namespace FractionCalcOOP
 
             result.Numerator = this.Numerator * fraction2.Numerator;
             result.Denominator = this.Denominator * fraction2.Denominator;
-
+            result.Reduce();
 
             return result;
         }
@@ -114,26 +115,9 @@ namespace FractionCalcOOP
 
             result.Numerator = this.Numerator * fraction2.Denominator;
             result.Denominator = this.Denominator * fraction2.Numerator;
-
+            result.Reduce();
 
             return result;
-        }
-
-        // Reduce
-
-        public void Reduce()
-        {
-
-            if (this.Numerator != 0)
-            {
-
-                int GCD = FindGreatestCommonDivisor(this.Numerator, this.Denominator);
-
-                this.Numerator /= GCD;
-                this.Denominator /= GCD;
-
-            }
-            
         }
 
         // Assign
@@ -150,7 +134,25 @@ namespace FractionCalcOOP
 
         // Private Methods
 
-        //Najwieszy wspolny dzielnik
+
+        // Reduce
+
+        private void Reduce()
+        {
+
+            if (this.Numerator != 0)
+            {
+
+                int GCD = FindGreatestCommonDivisor(this.Numerator, this.Denominator);
+
+                this.Numerator /= GCD;
+                this.Denominator /= GCD;
+
+            }
+
+        }
+
+        // Find the greatest common divisor method (Najwieszy wspolny dzielnik)
 
         private int FindGreatestCommonDivisor(int number1, int number2)
         {
@@ -168,7 +170,7 @@ namespace FractionCalcOOP
         
         }
 
-        // Najmniejsza wspolna wielokrotnosc
+        //Find the least common multiple (Najmniejsza wspolna wielokrotnosc)
 
         private int FindLeastCommonMultiple(int number1, int number2)
         {

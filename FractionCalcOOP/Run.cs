@@ -77,8 +77,6 @@ namespace FractionCalcOOP
                     }
 
 
-                    result.Reduce();
-
                     Console.WriteLine($@"Result: {result.Numerator} / {result.Denominator}");
 
                 }
