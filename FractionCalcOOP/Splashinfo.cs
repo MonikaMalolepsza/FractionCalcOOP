@@ -1,4 +1,11 @@
-﻿using System;
+﻿//Autor:        Monika Malolepsza
+//Klasse:       IA119
+//Datei:        Splashinfo.cs
+//Datum:        28.09.2020
+//Beschreibung:
+//Aenderungen:  28.09.2020 Setup
+
+using System;
 namespace FractionCalcOOP
 {
     partial class main
@@ -6,7 +13,7 @@ namespace FractionCalcOOP
         static void Splashinfo()
         {
             string[] titles = { "Project name:", "Version:", "Data:", "Author:", "Class:" };
-            string[] information = { "Fraction Calculator", "1.0", "22.06.2020", "Monika Malolepsza", "IA119" };
+            string[] information = { "Fraction Calculator", "1.0", "28.09.2020", "Monika Malolepsza", "IA119" };
             Console.CursorTop = 5;
             for (int i = 0; i < information.Length; i++)
             {

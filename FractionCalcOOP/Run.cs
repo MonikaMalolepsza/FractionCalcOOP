@@ -1,4 +1,11 @@
-﻿using System;
+﻿//Autor:        Monika Malolepsza
+//Klasse:       IA119
+//Datei:        Run.cs
+//Datum:        28.09.2020
+//Beschreibung:
+//Aenderungen:  28.09.2020 Setup
+
+using System;
 namespace FractionCalcOOP
 {
     partial class main
