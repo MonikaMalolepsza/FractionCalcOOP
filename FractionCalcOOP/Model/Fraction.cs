@@ -152,7 +152,7 @@ namespace FractionCalcOOP
 
         }
 
-        // Find the greatest common divisor method (Najwieszy wspolny dzielnik)
+        // Find the greatest common divisor method (Najwieszy wspolny dzielnik, Größte gemeinsame Teiler)
 
         private int FindGreatestCommonDivisor(int number1, int number2)
         {
