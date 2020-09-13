@@ -35,9 +35,11 @@
     <Compile Include="Run.cs" />
     <Compile Include="Splashinfo.cs" />
     <Compile Include="Model\Fraction.cs" />
+    <Compile Include="View\UserInterface.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Model\" />
+    <Folder Include="View\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
