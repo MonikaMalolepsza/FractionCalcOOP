@@ -77,8 +77,10 @@ namespace FractionCalcOOP
                     }
 
 
-                    Console.WriteLine($@"Result: {result.Numerator} / {result.Denominator}");
+                    //@ - in line vars
+                    //$ - no need to escape chars
 
+                    Console.WriteLine($@"Result: {result.Numerator} / {result.Denominator}");
                 }
 
                 // basic exception handling

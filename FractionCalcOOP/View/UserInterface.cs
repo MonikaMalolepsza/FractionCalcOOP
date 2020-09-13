@@ -7,7 +7,7 @@
 //Aenderungen:  13.09.2020 Implementation of read/write methods
 
 using System;
-namespace FractionCalcOOP.View
+namespace FractionCalcOOP
 {
     public class UserInterface
     {
@@ -29,10 +29,8 @@ namespace FractionCalcOOP.View
 
         public UserInterface()
         {
-
             Fraction = new Fraction();
             Text = " ";
-
         }
 
         #endregion
@@ -69,14 +67,12 @@ namespace FractionCalcOOP.View
             //$ - no need to escape chars
 
             Console.WriteLine($@"Result: {Fraction.Numerator} / {Fraction.Denominator}");
-
         }
 
         // read text
 
         public string TextReader()
         {
-
             return Console.ReadLine();
         }
 
