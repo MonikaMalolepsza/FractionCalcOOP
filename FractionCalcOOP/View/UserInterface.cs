@@ -50,9 +50,9 @@ namespace FractionCalcOOP
             Console.WriteLine("Please provide values for for:");
             Console.WriteLine();
             Console.WriteLine("the numerator:");
-            Numerator = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("the denominator 1:");
-            Denominator = Convert.ToInt32(Console.ReadLine());
+            Numerator = Convert.ToInt32(TextReader());
+            Console.WriteLine("the denominator:");
+            Denominator = Convert.ToInt32(TextReader());
 
             return new Fraction(Numerator, Denominator);
         }
@@ -66,7 +66,8 @@ namespace FractionCalcOOP
             //@ - in line vars
             //$ - no need to escape chars
 
-            Console.WriteLine($@"Result: {Fraction.Numerator} / {Fraction.Denominator}");
+            Text = $@"Result: {Fraction.Numerator} / {Fraction.Denominator}";
+            TextWriter();
         }
 
         // read text
@@ -80,10 +81,27 @@ namespace FractionCalcOOP
 
         public void TextWriter()
         {
-            Console.WriteLine(Text);
-
+            Console.Write(Text);
         }
 
+        public void Splashinfo()
+        {
+            string[] titles = { "Project name:", "Version:", "Data:", "Author:", "Class:" };
+            string[] information = { "Fraction Calculator", "1.0", "28.09.2020", "Monika Malolepsza", "IA119" };
+            Console.CursorTop = 5;
+            for (int i = 0; i < information.Length; i++)
+            {
+                Console.CursorLeft = (Console.WindowWidth - 32) / 2;
+                Console.ForegroundColor = ConsoleColor.Blue;
+                Console.WriteLine("{0,-12}{1,20}", titles[i], information[i]);
+                Console.ForegroundColor = ConsoleColor.White;
+                System.Threading.Thread.Sleep(400);
+            }
+            Console.SetCursorPosition((Console.WindowWidth - 50) / 2, Console.WindowHeight - 2);
+            Console.WriteLine("Press any key to continue.");
+            Console.ReadKey(true);
+
+        }
 
         #endregion
 

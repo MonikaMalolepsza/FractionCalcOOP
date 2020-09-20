@@ -15,10 +15,10 @@ namespace FractionCalcOOP
         {
             // Run();
 
-            UserInterface ui = new UserInterface();
-            ui.Fraction.Assign(ui.FractionReader());
-            ui.Fraction.Assign(ui.Fraction.Addition(ui.FractionReader()));
+            Controller controller = new Controller();
+            controller.Run();
         }
+
     }
 }
 
