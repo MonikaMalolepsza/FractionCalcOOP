@@ -1,4 +1,14 @@
-﻿using System;
+﻿//Autor:        Monika Malolepsza
+//Klasse:       IA119
+//Datei:        Fraction.cs
+//Datum:        28.08.2020
+//Beschreibung:
+//Aenderungen:  09.09.2020 Setup
+//Aenderungen:  13.09.2020 Implementation of read/write methods
+//Aenderungen:  19.09.2020 UserInterface class integrated
+//Aenderungen:  20.09.2020 Basic exception handling
+
+using System;
 using System.CodeDom;
 using System.Reflection.Emit;
 

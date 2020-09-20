@@ -1,10 +1,11 @@
 ﻿//Autor:        Monika Malolepsza
 //Klasse:       IA119
 //Datei:        Fraction.cs
-//Datum:        28.09.2020
+//Datum:        28.08.2020
 //Beschreibung:
 //Aenderungen:  09.09.2020 Setup
 //Aenderungen:  13.09.2020 Implementation of read/write methods
+//Aenderungen:  19.09.2020 splashinfo added
 
 using System;
 namespace FractionCalcOOP
