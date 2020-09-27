@@ -65,6 +65,22 @@ namespace FractionCalcOOP
 
         #region methods
 
+        private void RunAdd()
+        {
+            Result.Assign(Fraction1.Addition(Fraction2));
+        }
+        private void RunSub()
+        {
+            Result.Assign(Fraction1.Substraction(Fraction2));
+        }
+        private void RunMulti()
+        {
+            Result.Assign(Fraction1.Multiplication(Fraction2));
+        }
+        private void RunDiv()
+        {
+            Result.Assign(Fraction1.Division(Fraction2));
+        }
         public void Run()
         {
 
@@ -96,16 +112,16 @@ namespace FractionCalcOOP
                     switch (UserInterface.Text)
                     {
                         case "+":
-                            Result.Assign(Fraction1.Addition(Fraction2));
+                            this.RunAdd();
                             break;
                         case "-":
-                            Result.Assign(Fraction1.Substraction(Fraction2));
+                            this.RunSub();
                             break;
                         case "*":
-                            Result.Assign(Fraction1.Multiplication(Fraction2));
+                            this.RunMulti();
                             break;
                         case "/":
-                            Result.Assign(Fraction1.Division(Fraction2));
+                            this.RunDiv();
                             break;
                         default:
                             throw new ArgumentException("Invalid operator!");
